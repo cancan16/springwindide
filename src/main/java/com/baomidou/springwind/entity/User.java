@@ -10,7 +10,7 @@ import com.baomidou.mybatisplus.annotations.TableName;
 /**
  *
  * 用户表
- *
+ * 实体添加JPA注解
  */
 @TableName(value = "user")
 public class User implements Serializable {
