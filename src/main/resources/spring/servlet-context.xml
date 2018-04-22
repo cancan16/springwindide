@@ -54,25 +54,25 @@
 		<property name="ssoPropPath" value="properties/sso.properties" />
 	</bean>
 	
-	<mvc:interceptors>
-		<!-- SSO 拦截器 -->
-		<!-- path 对所有的请求拦截使用/**，对某个模块下的请求拦截使用：/myPath/* -->
-		<mvc:interceptor>
-			<mvc:mapping path="/**" />
-			<bean class="com.baomidou.kisso.web.interceptor.SSOSpringInterceptor" />
-		</mvc:interceptor>
-		<!-- 权限拦截器 -->
-		<mvc:interceptor>
-			<mvc:mapping path="/**" />
-			<bean class="com.baomidou.kisso.web.interceptor.SSOPermissionInterceptor">
-				<property name="authorization">
-					<bean class="com.baomidou.springwind.service.impl.PermissionServiceImpl"/>
-				</property>
-				<property name="illegalUrl" value="/error/illegalAccess.html"/>
-			</bean>
-		</mvc:interceptor>
-		<bean class="com.baomidou.framework.spring.DataLoadingInterceptor" />
-	</mvc:interceptors>
+	<!--<mvc:interceptors>-->
+		<!--&lt;!&ndash; SSO 拦截器 &ndash;&gt;-->
+		<!--&lt;!&ndash; path 对所有的请求拦截使用/**，对某个模块下的请求拦截使用：/myPath/* &ndash;&gt;-->
+		<!--<mvc:interceptor>-->
+			<!--<mvc:mapping path="/**" />-->
+			<!--<bean class="com.baomidou.kisso.web.interceptor.SSOSpringInterceptor" />-->
+		<!--</mvc:interceptor>-->
+		<!--&lt;!&ndash; 权限拦截器 &ndash;&gt;-->
+		<!--<mvc:interceptor>-->
+			<!--<mvc:mapping path="/**" />-->
+			<!--<bean class="com.baomidou.kisso.web.interceptor.SSOPermissionInterceptor">-->
+				<!--<property name="authorization">-->
+					<!--<bean class="com.baomidou.springwind.service.impl.PermissionServiceImpl"/>-->
+				<!--</property>-->
+				<!--<property name="illegalUrl" value="/error/illegalAccess.html"/>-->
+			<!--</bean>-->
+		<!--</mvc:interceptor>-->
+		<!--<bean class="com.baomidou.framework.spring.DataLoadingInterceptor" />-->
+	<!--</mvc:interceptors>-->
 	
 	<mvc:annotation-driven>
 		<!-- 编码转换 -->
